@@ -1,116 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ComboBox UI</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>카운트2</title>
   </head>
   <body>
-    <div class="container">
-      <div class="select_wrap combobox_wrap">
-        <input
-          type="text"
-          class="input_box txt"
-          name="comboBoxInput"
-          title="도메인 선택/입력"
-          placeholder="직접입력"
-          data-name="combobox-input"
-        />
-        <div class="options_wrap" tabindex="0">
-          <ul class="options_list">
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="naver.com"
-                data-option-value="naver.com"
-              >
-                naver.com
-              </button>
-            </li>
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="gmail.com"
-                data-option-value="gmail.com"
-              >
-                gmail.com
-              </button>
-            </li>
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="daum.net"
-                data-option-value="daum.net"
-              >
-                daum.net
-              </button>
-            </li>
+    <pre>
+      농장A에는 사과 10, 배 13, 감 11, 감귤 20, 밤 5, 포도 7 그루씩 있고,
+      농장B에는 사과 5, 체리 20,  감 4, 포도 10, 레몬 12, 바나나 2, 복숭아 5 그루씩 있다.
 
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="option-list-01"
-                data-option-value="option-list-01"
-              >
-                option-list-01
-              </button>
-            </li>
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="option-list-02"
-                data-option-value="option-list-02"
-              >
-                option-list-02
-              </button>
-            </li>
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="option-list-03"
-                data-option-value="option-list-03"
-              >
-                option-list-03
-              </button>
-            </li>
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="option-list-04"
-                data-option-value="option-list-04"
-              >
-                option-list-04
-              </button>
-            </li>
-            <li class="option_item">
-              <button
-                type="button"
-                class="option_btn"
-                data-option-label="option-list-05"
-                data-option-value="option-list-05"
-              >
-                option-list-05
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      ※ 1그루에 사과는 15, 배는 8, 감은 10, 포도는 20. 레몬은 24, 바나나는 17, 복숭아는 6, 
+        감귤은 30, 밤은 10, 체리 30 개씩 열린다고 가정한다.
+
+      Q1. 농장A와 농장B에서 생산 된 과일 별 수는?
+      Q2. 농장A에서만 생산되는 과일 별 수는?
+      Q3. 농장A와 농장B에 생산되는 과일 주 가능 많은 생산된 과일은 어떤 과일이며, 몇개 인가요?
+      Q4. 농장A와 농장B에서 공통으로 생산하는 과일은 몇 가지인가요?
+      Q5. 농장A에서만 생산된 과일 중 가장 많이 생산 과일과, 
+          농장B에서만 생산된 과일 중 가장 적게 생산 과일을 교환하려고 하려고 할때,
+          각각 어떤 과일을 교환하게 되며, 몇개의 차이가 있나요?
+    </pre>
+
+    <hr />
+
+    <p id="Q_01">
+      Q1. 농장A와 농장B에서 생산 된 과일 별 수는? <span class="answer">0</span>
+    </p>
+    <p id="Q_02">
+      Q2. 농장A에서만 생산되는 과일 별 수는? <span class="answer">0</span>
+    </p>
+    <p id="Q_03">
+      Q3. 농장A와 농장B에 생산되는 과일 주 가능 많은 생산된 과일은 어떤
+      과일이며, 몇개 인가요? <span class="answer">0</span>
+    </p>
+    <p id="Q_04">
+      Q4. 농장A와 농장B에서 공통으로 생산하는 과일은 몇 가지인가요?
+      <span class="answer">0</span>
+    </p>
+    <p id="Q_05">
+      Q5. 농장A에서만 생산된 과일 중 가장 많이 생산 과일과,<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;농장B에서만 생산된 과일 중 가장 적게 생산
+      과일을 교환하려고 하려고 할때,<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;각각 어떤 과일을 교환하게 되며, 몇개의
+      차이가 있나요? <span class="answer">0</span>
+    </p>
 
     <script src="./app.js"></script>
-    <script>
-      const input = document.querySelector("[name='comboBoxInput']");
-      input.addEventListener("change", (e) => {
-        console.log(e);
-      });
-    </script>
+
+    <style>
+      .answer {
+        margin-top: 20px;
+        position: relative;
+        padding-left: 15px;
+        display: block;
+        font-weight: bold;
+      }
+      .answer:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "-";
+        font-weight: normal;
+      }
+    </style>
   </body>
 </html>
